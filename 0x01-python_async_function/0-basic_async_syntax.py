@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """
 0-basic_async_syntax.py - Provides a coroutine for
  delaying for a random amount of time
