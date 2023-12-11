@@ -24,6 +24,8 @@ async def wait_n(n: int, max_delay: int) -> list[float]:
     async def append_wait_random() -> None:
         """
         Implements a random wait and adds the wait time into a list
+
+        Returns: none
         """
         wait_times.append(await wait_random(max_delay))
 
