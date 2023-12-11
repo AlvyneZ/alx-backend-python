@@ -8,12 +8,12 @@ import asyncio
 from random import uniform
 
 
-async def wait_random(max_delay: float = 10) -> float:
+async def wait_random(max_delay: int = 10) -> float:
     """
     Delays for a random number of seconds between 0 and the
      provided maximum delay period
 
-    max_delay (float): The maximum delay time allowed (inclusive)
+    max_delay (int): The maximum delay time allowed (inclusive)
 
     Returns: the delay that was implemented
     """
