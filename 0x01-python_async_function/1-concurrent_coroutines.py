@@ -5,10 +5,11 @@
 """
 
 import asyncio
+from typing import List
 wait_random = __import__('0-basic_async_syntax').wait_random
 
 
-async def wait_n(n: int, max_delay: int) -> list[float]:
+async def wait_n(n: int, max_delay: int) -> List[float]:
     """
     Concurrently runs n random delays each with a maximum delay
      of max_delay seconds
@@ -19,7 +20,7 @@ async def wait_n(n: int, max_delay: int) -> list[float]:
     Returns: a list of the delays that were implemented
     """
 
-    wait_times: list[float] = []
+    wait_times: List[float] = []
 
     async def append_wait_random() -> None:
         """
