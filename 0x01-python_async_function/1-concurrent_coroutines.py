@@ -27,6 +27,5 @@ async def wait_n(n: int, max_delay: int) -> list[float]:
         """
         wait_times.append(await wait_random(max_delay))
 
-    exec: tuple[asyncio.Future] = (append_wait_random() for i in range(n))
-    await asyncio.gather(*exec)
+    await asyncio.gather(*(append_wait_random() for _ in range(n)))
     return wait_times
