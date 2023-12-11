@@ -1,0 +1,29 @@
+#!/usr/bin/env python3
+"""
+1-concurrent_coroutines.py - Provides a coroutine for
+ concurrently running multiple random delays
+"""
+
+import asyncio
+wait_random = __import__('0-basic_async_syntax').wait_random
+
+
+async def wait_n(n: int, max_delay: int) -> list[float]:
+    """
+    Concurrently runs n random delays each with a maximum delay
+     of max_delay seconds
+
+    n (int): The number of concurrent random delays to spawn
+    max_delay (int): The maximum delay time allowed (inclusive)
+
+    Returns: a list of the delays that were implemented
+    """
+
+    wait_times: list[float] = []
+
+    async def append_wait_random() -> None:
+        wait_times.append(await wait_random(max_delay))
+
+    exec: tuple[asyncio.Future] = (append_wait_random() for i in range(n))
+    await asyncio.gather(*exec)
+    return wait_times
