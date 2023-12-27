@@ -3,10 +3,10 @@
 6-sum_mixed_list.py - Provides a method for summing
  the elements of a list of floats and ints
 """
-import typing
+from typing import List, Union
 
 
-def sum_mixed_list(mxd_list: typing.List[typing.Union[float, int]]) -> float:
+def sum_mixed_list(mxd_list: List[Union[int, float]]) -> float:
     """
     Sums up the float and int elements of a list
 
