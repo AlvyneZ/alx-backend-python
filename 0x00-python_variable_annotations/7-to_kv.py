@@ -3,10 +3,10 @@
 7-to_kv.py - Provides a method for creating a
  tuple of a string and number (int or float)
 """
-from typing import Tuple
+from typing import Tuple, Union
 
 
-def to_kv(k: str, v: int | float) -> Tuple[str, float]:
+def to_kv(k: str, v: Union[int, float]) -> Tuple[str, float]:
     """
     Creates a tuple of a string and square of number
 
